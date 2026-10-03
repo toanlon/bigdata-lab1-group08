@@ -1,0 +1,34 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"Role","metadata":{"annotations":{},"name":"observer","namespace":"bd-g08"},"rules":[{"apiGroups":[""],"resources":["pods"],"verbs":["get","list","watch"]},{"apiGroups":[""],"resources":["events"],"verbs":["get","list","watch"]},{"apiGroups":[""],"resources":["pods/log"],"verbs":["get"]}]}
+  creationTimestamp: "2026-10-03T17:19:46Z"
+  name: observer
+  namespace: bd-g08
+  resourceVersion: "1791047987003391013"
+  uid: ae8031bb-9832-4463-876f-4b9777b38689
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - pods/log
+  verbs:
+  - get

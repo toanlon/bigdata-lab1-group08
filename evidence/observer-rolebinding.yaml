@@ -1,0 +1,19 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"RoleBinding","metadata":{"annotations":{},"name":"observer","namespace":"bd-g08"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"Role","name":"observer"},"subjects":[{"kind":"ServiceAccount","name":"observer","namespace":"bd-g08"}]}
+  creationTimestamp: "2026-10-03T17:19:47Z"
+  name: observer
+  namespace: bd-g08
+  resourceVersion: "1791047987600303023"
+  uid: 921c5a7b-9c8b-4391-bf5f-c3b21cdfabe2
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: observer
+subjects:
+- kind: ServiceAccount
+  name: observer
+  namespace: bd-g08

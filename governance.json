@@ -1,0 +1,38 @@
+{
+  "buckets": [
+    {
+      "bucket": "research-raw",
+      "owner": "TBD",
+      "steward": "TBD",
+      "classification": "TBD",
+      "purpose": "Research data ingestion",
+      "retention": "TBD",
+      "retention_enforced": false,
+      "cleanup_owner": "TBD",
+      "access_policy": {
+        "ingestor": ["PUT", "GET", "LIST"],
+        "analyst": []
+      },
+      "verified_tests": [],
+      "approved_by": "TBD",
+      "policy_revision": "1"
+    },
+    {
+      "bucket": "research-release",
+      "owner": "TBD",
+      "steward": "TBD",
+      "classification": "TBD",
+      "purpose": "Approved research data access",
+      "retention": "TBD",
+      "retention_enforced": false,
+      "cleanup_owner": "TBD",
+      "access_policy": {
+        "ingestor": [],
+        "analyst": ["GET", "LIST"]
+      },
+      "verified_tests": [],
+      "approved_by": "TBD",
+      "policy_revision": "1"
+    }
+  ]
+}
