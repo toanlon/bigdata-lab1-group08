@@ -1,0 +1,46 @@
+{
+  "identities": [
+    {
+      "name": "owner",
+      "actions": [
+        "Admin",
+        "Read",
+        "Write",
+        "List"
+      ],
+      "credentials": [
+        {
+          "accessKey": "lab-7799ef1778f9eeefa38c",
+          "secretKey": "aSTxeqlp2vbVsCKNJMjdQq7FtLLB945JlibzmgivyS0"
+        }
+      ]
+    },
+    {
+      "name": "ingestor",
+      "actions": [
+        "Read:research-raw",
+        "Write:research-raw",
+        "List:research-raw"
+      ],
+      "credentials": [
+        {
+          "accessKey": "lab-eda031ee155959534deb",
+          "secretKey": "z1XP0Kzv7oeP6bT1MEUMmQTKcM8zW5cbl-a8Vy9LLHk"
+        }
+      ]
+    },
+    {
+      "name": "analyst",
+      "actions": [
+        "Read:research-release",
+        "List:research-release"
+      ],
+      "credentials": [
+        {
+          "accessKey": "lab-e60679920038ae8a7928",
+          "secretKey": "uRgrXaoFW11LqaiWlsvk7Li78as-pz8UBjJEjt6ARno"
+        }
+      ]
+    }
+  ]
+}
