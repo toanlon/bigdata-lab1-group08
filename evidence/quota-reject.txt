@@ -1,0 +1,1 @@
+Error from server (Forbidden): error when creating "negative.yaml": pods "quota-negative" is forbidden: exceeded quota: group-resource-quota, requested: requests.cpu=3, used: requests.cpu=0, limited: requests.cpu=2
