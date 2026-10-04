@@ -10,16 +10,10 @@
       "retention_enforced": false,
       "cleanup_owner": "TBD",
       "access_policy": {
-        "ingestor": [
-          "PUT",
-          "GET",
-          "LIST"
-        ],
+        "ingestor": ["PUT", "GET", "LIST"],
         "analyst": []
       },
-      "verified_tests": [
-        "S10"
-      ],
+      "verified_tests": [],
       "approved_by": "TBD",
       "policy_revision": "1"
     },
@@ -34,15 +28,9 @@
       "cleanup_owner": "TBD",
       "access_policy": {
         "ingestor": [],
-        "analyst": [
-          "GET",
-          "LIST"
-        ]
+        "analyst": ["GET", "LIST"]
       },
-      "verified_tests": [
-        "S06",
-        "S08"
-      ],
+      "verified_tests": [],
       "approved_by": "TBD",
       "policy_revision": "1"
     }

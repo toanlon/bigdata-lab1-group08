@@ -1,0 +1,2 @@
+NAME      READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                       SELECTOR
+objects   1/1     1            1           22h   store        chrislusf/seaweedfs:latest   app=objects
