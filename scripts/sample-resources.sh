@@ -7,7 +7,5 @@ do
     kubectl -n "$NS" top pod
     kubectl -n "$NS" get pod -o wide
 
-    echo
-
     sleep 5
 done
