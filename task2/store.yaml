@@ -1,0 +1,108 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: object-data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 4Gi
+
+---
+# Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: objects
+spec:
+  replicas: 1
+
+  strategy:
+    type: Recreate
+
+  selector:
+    matchLabels:
+      app: objects
+
+  template:
+    metadata:
+      labels:
+        app: objects
+
+    spec:
+      automountServiceAccountToken: false
+
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+        runAsNonRoot: true
+
+      containers:
+        - name: store
+          image: ${STORAGE_IMAGE}
+
+          command:
+            - weed
+
+          args:
+            - mini
+            - "-dir=/data"
+            - "-s3.config=/auth/s3.json"
+
+          ports:
+            - name: s3
+              containerPort: 8333
+
+          resources:
+            requests:
+              cpu: 500m
+              memory: 512Mi
+            limits:
+              cpu: "1"
+              memory: 1Gi
+
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            seccompProfile:
+              type: RuntimeDefault
+
+          readinessProbe:
+            tcpSocket:
+              port: s3
+
+          volumeMounts:
+            - name: object-data
+              mountPath: /data
+
+            - name: s3-config
+              mountPath: /auth
+              readOnly: true
+
+      volumes:
+        - name: object-data
+          persistentVolumeClaim:
+            claimName: object-data
+
+        - name: s3-config
+          secret:
+            secretName: s3-config
+            
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: objects
+spec:
+  type: ClusterIP
+  selector:
+    app: objects
+  ports:
+    - name: s3
+      port: 8333
+      targetPort: s3

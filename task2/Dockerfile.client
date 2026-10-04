@@ -1,0 +1,20 @@
+FROM python:3.11-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+RUN pip install --no-cache-dir boto3
+
+RUN useradd --create-home --uid 1000 --shell /usr/sbin/nologin client
+
+COPY s3lab.py /opt/s3lab.py
+
+RUN chmod 755 /opt/s3lab.py && \
+    chown 1000:1000 /opt/s3lab.py
+
+USER 1000:1000
+
+WORKDIR /opt
+
+ENTRYPOINT ["python", "/opt/s3lab.py"]
