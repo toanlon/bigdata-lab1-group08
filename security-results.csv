@@ -1,0 +1,23 @@
+test_id,principal_context,target,expected,actual_result,status,operator,reviewer,evidence_path
+S01,ingestor,PUT research-raw/auth-probe.txt,Allow,NOT_RUN,INCONCLUSIVE,,,evidence/S01
+S02,ingestor,GET research-raw/fixture.txt,Allow,NOT_RUN,INCONCLUSIVE,,,evidence/S02
+S03,ingestor,LIST research-raw,Allow,NOT_RUN,INCONCLUSIVE,,,evidence/S03
+S04,ingestor,PUT research-release,Deny,NOT_RUN,INCONCLUSIVE,,,evidence/S04
+S05,ingestor,GET research-release,Deny,NOT_RUN,INCONCLUSIVE,,,evidence/S05
+S06,analyst,GET research-release,Allow,NOT_RUN,INCONCLUSIVE,,,evidence/S06
+S07,analyst,LIST research-release,Allow,NOT_RUN,INCONCLUSIVE,,,evidence/S07
+S08,analyst,PUT research-release,Deny,NOT_RUN,INCONCLUSIVE,,,evidence/S08
+S09,analyst,DELETE research-release/delete-probe.txt,Deny,NOT_RUN,INCONCLUSIVE,,,evidence/S09
+S10,analyst,GET research-raw,Deny,NOT_RUN,INCONCLUSIVE,,,evidence/S10
+S11,analyst,LIST research-raw,Deny,NOT_RUN,INCONCLUSIVE,,,evidence/S11
+S12,anonymous,GET research-release,Deny,NOT_RUN,INCONCLUSIVE,,,evidence/S12
+K01,observer,list pods,Allow,NOT_RUN,INCONCLUSIVE,,,evidence/K01
+K02,observer,get events,Allow,NOT_RUN,INCONCLUSIVE,,,evidence/K02
+K03,observer,read storage Pod logs,Allow,NOT_RUN,INCONCLUSIVE,,,evidence/K03
+K04,observer,read s3-config Secret,Deny,NOT_RUN,INCONCLUSIVE,,,evidence/K04
+K05,observer,create Pod,Deny,NOT_RUN,INCONCLUSIVE,,,evidence/K05
+K06,observer,delete storage Pod,Deny,NOT_RUN,INCONCLUSIVE,,,evidence/K06
+N01,owner,connect objects:8333,Connect,NOT_RUN,INCONCLUSIVE,,,evidence/N01
+N02,blocked,connect objects:8333,Blocked,NOT_RUN,INCONCLUSIVE,,,evidence/N02
+N03,owner,connect storage Pod IP:8888,Blocked,NOT_RUN,INCONCLUSIVE,,,evidence/N03
+N04,outsider,connect objects namespace service:8333,Blocked,NOT_RUN,INCONCLUSIVE,,,evidence/N04

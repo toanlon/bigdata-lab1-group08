@@ -1,0 +1,8 @@
+=== Observer RBAC checks ===
+Sat Oct  3 05:24:28 PM UTC 2026
+list pods            yes
+get events           yes
+get pods/log         yes
+get secrets          no
+create pods          no
+delete pods          no

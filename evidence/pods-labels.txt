@@ -1,0 +1,2 @@
+NAME                      READY   STATUS    RESTARTS   AGE    LABELS
+objects-57c9db6ff-tv676   1/1     Running   0          7m2s   app=objects,pod-template-hash=57c9db6ff,topology.kubernetes.io/region=us-east5,topology.kubernetes.io/zone=us-east5-a
