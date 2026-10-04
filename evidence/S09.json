@@ -1,0 +1,2 @@
+{"bucket": "research-release", "bytes": 0, "error": "AccessDenied", "http": 403, "key": "delete-probe.txt", "ms": 64.54945899895392, "ok": false, "op": "delete", "principal": "analyst", "request_id": "18DB3C8ADEC515959CC97ED3", "utc": "2026-10-04T05:30:43.953814+00:00"}
+command terminated with exit code 2

@@ -1,0 +1,33 @@
+{
+  "test_id": "N04",
+  "source_namespace": "outsider",
+  "source_pod": "outsider-client",
+  "source_labels": {
+    "role": "outsider"
+  },
+  "destination": "objects.bd-g08.svc.cluster.local",
+  "destination_ip": "34.118.234.120",
+  "destination_port": 8333,
+  "network_policy": "bd-g08/private-object-store",
+  "policy_selector": {
+    "app": "objects"
+  },
+  "allowed_source_selector": {
+    "access": "s3"
+  },
+  "outsider_result": "TIMEOUT",
+  "baseline_namespace": "bd-g08",
+  "baseline_pod": "n04-baseline",
+  "baseline_labels": {
+    "access": "s3"
+  },
+  "baseline_result": "CONNECTED",
+  "dns_resolved": true,
+  "calico_pods_running": true,
+  "status": "PASS",
+  "interpretation": "Outsider connection timed out while the permitted same-namespace baseline connected. Results are consistent with the intended NetworkPolicy enforcement.",
+  "evidence_files": [
+    "evidence/N04-outsider.txt",
+    "evidence/N04-baseline.txt"
+  ]
+}

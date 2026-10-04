@@ -1,0 +1,2 @@
+{"bucket": "research-release", "bytes": 0, "error": "AccessDenied", "http": 403, "key": "auth-probe.txt", "ms": 17.327800000202842, "ok": false, "op": "put", "principal": "analyst", "request_id": "18DB3C8A275CCC18163733D6", "utc": "2026-10-04T05:30:40.877815+00:00"}
+command terminated with exit code 2

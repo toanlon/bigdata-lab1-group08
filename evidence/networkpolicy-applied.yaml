@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{},"name":"private-object-store","namespace":"bd-g08"},"spec":{"ingress":[{"from":[{"podSelector":{"matchLabels":{"access":"s3"}}}],"ports":[{"port":8333,"protocol":"TCP"}]}],"podSelector":{"matchLabels":{"app":"objects"}},"policyTypes":["Ingress"]}}
+  creationTimestamp: "2026-10-04T05:43:35Z"
+  generation: 1
+  name: private-object-store
+  namespace: bd-g08
+  resourceVersion: "1791092615109023000"
+  uid: 01410376-c664-4c58-b52d-e0702a3bda0d
+spec:
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          access: s3
+    ports:
+    - port: 8333
+      protocol: TCP
+  podSelector:
+    matchLabels:
+      app: objects
+  policyTypes:
+  - Ingress

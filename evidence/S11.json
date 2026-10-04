@@ -1,0 +1,2 @@
+{"bucket": "research-raw", "bytes": 0, "error": "AccessDenied", "http": 403, "key": "", "ms": 16.857589995197486, "ok": false, "op": "list", "principal": "analyst", "request_id": "18DB3C8C43FC210950F1B051", "utc": "2026-10-04T05:30:49.947328+00:00"}
+command terminated with exit code 2

@@ -1,0 +1,12 @@
+=== K01: list pods ===
+yes
+=== K02: get events ===
+yes
+=== K03: read pod logs ===
+yes
+=== K04: read Secret ===
+no
+=== K05: create Pod ===
+no
+=== K06: delete storage Pod ===
+no

@@ -19,5 +19,5 @@ K05,observer,create Pod,Deny,no,PASS,,,evidence/rbac-retest.txt
 K06,observer,delete storage Pod,Deny,no,PASS,,,evidence/rbac-retest.txt
 N01,owner,connect objects:8333,Connect,NOT_RUN,INCONCLUSIVE,,,evidence/N01
 N02,blocked,connect objects:8333,Blocked,NOT_RUN,INCONCLUSIVE,,,evidence/N02
-N03,owner,connect storage Pod IP:8888,Blocked,TIMEOUT,PASS,,,evidence/N03-current-listeners.txt;evidence/N03-test.txt;evidence/N03-control.txt
+N03,owner,connect storage Pod IP:8888,Blocked,NOT_RUN,INCONCLUSIVE,,,evidence/N03
 N04,outsider,connect objects namespace service:8333,Blocked,TIMEOUT_BASELINE_CONNECTED,PASS,,,evidence/N04-outsider.txt;evidence/N04-baseline.txt
