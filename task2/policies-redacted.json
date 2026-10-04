@@ -1,0 +1,17 @@
+{
+  "owner": [
+    "Admin",
+    "Read",
+    "Write",
+    "List"
+  ],
+  "ingestor": [
+    "Read:research-raw",
+    "Write:research-raw",
+    "List:research-raw"
+  ],
+  "analyst": [
+    "Read:research-release",
+    "List:research-release"
+  ]
+}
