@@ -1,0 +1,1 @@
+{"bucket": "research-raw", "bytes": 25, "error": null, "http": 200, "key": "auth-probe.txt", "ms": 21.367519999330398, "ok": true, "op": "put", "principal": "ingestor", "request_id": "18DB3C84E9C4DD6BE87F7577", "utc": "2026-10-04T05:30:18.370939+00:00"}

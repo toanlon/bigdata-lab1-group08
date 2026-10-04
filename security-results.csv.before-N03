@@ -1,4 +1,3 @@
-
 test_id,principal_context,target,expected,actual_result,status,operator,reviewer,evidence_path
 S01,ingestor,PUT research-raw/auth-probe.txt,Allow,HTTP 200,PASS,,,evidence/S01.json
 S02,ingestor,GET research-raw/fixture.txt,Allow,HTTP 200,PASS,,,evidence/S02.json
@@ -18,8 +17,7 @@ K03,observer,read storage Pod logs,Allow,yes,PASS,,,evidence/rbac-retest.txt
 K04,observer,read s3-config Secret,Deny,no,PASS,,,evidence/rbac-retest.txt
 K05,observer,create Pod,Deny,no,PASS,,,evidence/rbac-retest.txt
 K06,observer,delete storage Pod,Deny,no,PASS,,,evidence/rbac-retest.txt
-N01,owner,connect objects:8333,Connect,CONNECTED,PASS,,,evidence/N01.json
-N02,blocked,connect objects:8333,Blocked,TIMEOUT,PASS,,,evidence/N02.json
-N03,owner,connect storage Pod IP:8888,Blocked,TIMEOUT,PASS,,,evidence/N03-current-listeners.txt;evidence/N03-test.txt;evidence/N03-control.txt
+N01,owner,connect objects:8333,Connect,NOT_RUN,INCONCLUSIVE,,,evidence/N01
+N02,blocked,connect objects:8333,Blocked,NOT_RUN,INCONCLUSIVE,,,evidence/N02
+N03,owner,connect storage Pod IP:8888,Blocked,NOT_RUN,INCONCLUSIVE,,,evidence/N03
 N04,outsider,connect objects namespace service:8333,Blocked,TIMEOUT_BASELINE_CONNECTED,PASS,,,evidence/N04-outsider.txt;evidence/N04-baseline.txt
-

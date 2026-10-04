@@ -1,0 +1,1 @@
+{"host": "objects.bd-g08.svc.cluster.local", "port": 8333, "ip": "34.118.234.120", "result": "TIMEOUT"}
