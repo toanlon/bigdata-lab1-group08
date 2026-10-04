@@ -1,0 +1,30 @@
+  Lance        starting
+  Lance        ready     0.0s
+  WebDAV       ready     0.2s
+  Admin        starting
+W1004 16:00:03.226486 admin.go:818 Worker gRPC control plane is bound to 0.0.0.0 (non-loopback) without grpc.admin mTLS.
+W1004 16:00:03.226505 admin.go:819 Anyone who can reach port 33646 can register a maintenance worker unauthenticated.
+W1004 16:00:03.226569 admin.go:820 Enable [grpc.admin] cert/key and [grpc.ca] in security.toml, or bind to loopback.
+  Admin        ready     0.5s
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                      SeaweedFS Mini - All-in-One Mode                         ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+  All enabled components are running and ready to use:
+
+    Master UI:       http://10.92.1.26:9333
+    Volume Server:   http://10.92.1.26:9340
+    Filer UI:        http://10.92.1.26:8888
+    WebDAV:          http://10.92.1.26:7333
+    S3 Endpoint:     http://10.92.1.26:8333
+    Iceberg Catalog: http://10.92.1.26:8181
+    Lance Namespace: http://10.92.1.26:9101
+    Admin UI:        http://10.92.1.26:23646
+
+  Data Directory:   /data
+  Free Space:       2.97 GiB
+  Volume Size:      64.00 MiB
+  Volume Count:     61
+  Free Volumes:     44
+
+  Press Ctrl+C to stop all components

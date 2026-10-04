@@ -1,0 +1,2 @@
+NAME          STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE
+object-data   Bound    pvc-d484bd27-3aa8-4c68-8e9a-328ebf913b98   4Gi        RWO            standard-rwo   <unset>                 23h   Filesystem

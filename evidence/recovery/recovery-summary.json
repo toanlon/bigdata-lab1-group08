@@ -1,0 +1,62 @@
+{
+  "task": "Task 5 - Recovery and Handover",
+  "recovery_method": "Delete the storage Pod and allow its Deployment to recreate it",
+  "namespace": "bd-g08",
+  "storage": {
+    "deployment": "objects",
+    "service": "objects",
+    "service_type": "ClusterIP",
+    "service_port": 8333,
+    "old_pod": "objects-57c9db6ff-gzd8f",
+    "new_pod": "objects-57c9db6ff-gmzt2",
+    "new_pod_status": "Running",
+    "deployment_ready_replicas": 1
+  },
+  "persistence": {
+    "pvc": "object-data",
+    "status": "Bound",
+    "capacity": "4Gi",
+    "storage_class": "standard-rwo",
+    "volume": "pvc-d484bd27-3aa8-4c68-8e9a-328ebf913b98",
+    "pvc_uid": "d484bd27-3aa8-4c68-8e9a-328ebf913b98",
+    "pvc_uid_unchanged": true
+  },
+  "data_verification": {
+    "prefix": "bench/r1-c1",
+    "expected_objects": 32,
+    "verified_objects": 32,
+    "http_200_for_all_objects": true,
+    "all_hashes_match": true,
+    "verify_exit_code": 0,
+    "evidence": "evidence/recovery/recovery-post-20261004T160327Z.jsonl"
+  },
+  "authorization_retests": {
+    "S06": {
+      "expected_http": 200,
+      "observed_http": 200,
+      "ok": true,
+      "evidence": "evidence/recovery/retest-20261004T161906Z-S06.jsonl"
+    },
+    "S08": {
+      "expected_http": 403,
+      "observed_http": 403,
+      "error": "AccessDenied",
+      "denial_is_expected": true,
+      "evidence": "evidence/recovery/retest-20261004T161906Z-S08.jsonl"
+    },
+    "S10": {
+      "expected_http": 403,
+      "observed_http": 403,
+      "error": "AccessDenied",
+      "denial_is_expected": true,
+      "evidence": "evidence/recovery/retest-20261004T161906Z-S10.jsonl"
+    }
+  },
+  "limitations": [
+    "This test demonstrates recovery from storage Pod replacement, not node or cluster failure.",
+    "It does not prove backup restoration or disaster recovery.",
+    "It does not establish crash consistency or durability under sudden power loss.",
+    "Exact recovery time and service downtime have not yet been measured.",
+    "Storage logs reported that the gRPC admin control plane was bound to 0.0.0.0 without mTLS; this requires a separate security review."
+  ]
+}

@@ -1,0 +1,2 @@
+NAME                      READY   STATUS    RESTARTS   AGE   IP           NODE                                       NOMINATED NODE   READINESS GATES
+objects-57c9db6ff-gmzt2   1/1     Running   0          6m    10.92.1.26   gke-cluster-1-default-pool-a7cd3e76-5p4n   <none>           <none>
