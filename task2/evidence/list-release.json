@@ -1,0 +1,1 @@
+{"bucket": "research-release", "bytes": 0, "error": null, "http": 200, "key": "", "keys": ["delete-probe.txt", "fixture.txt"], "ms": 17.437648995837662, "ok": true, "op": "list", "principal": "owner", "request_id": "18DB5C7066CE13777A82D8F0", "utc": "2026-10-04T15:15:14.644771+00:00"}

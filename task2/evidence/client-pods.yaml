@@ -1,0 +1,557 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 07f2e9eb9218b779629d8c914e6cb3f14ffa7070f6ce80d4110bbbde837dbc59
+      cni.projectcalico.org/podIP: 10.92.1.22/32
+      cni.projectcalico.org/podIPs: 10.92.1.22/32
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"labels":{"access":"s3","role":"owner"},"name":"owner","namespace":"bd-g08"},"spec":{"automountServiceAccountToken":false,"containers":[{"command":["sleep","infinity"],"env":[{"name":"S3_ENDPOINT","value":"http://objects:8333"},{"name":"PRINCIPAL","value":"owner"}],"envFrom":[{"secretRef":{"name":"s3-owner"}}],"image":"us-east5-docker.pkg.dev/bigdata-lab1-group08/bigdata-lab/bigdata-client@sha256:fb0d27dc409f30bf1272eea6a7409abe6603bbb765399c248e2bc74fbcb06ac4","name":"client","resources":{"limits":{"cpu":"500m","memory":"512Mi"},"requests":{"cpu":"100m","memory":"128Mi"}},"securityContext":{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"seccompProfile":{"type":"RuntimeDefault"}}}],"securityContext":{"runAsNonRoot":false}}}
+    creationTimestamp: "2026-10-04T07:20:03Z"
+    generation: 1
+    labels:
+      access: s3
+      role: owner
+      topology.kubernetes.io/region: us-east5
+      topology.kubernetes.io/zone: us-east5-a
+    name: owner
+    namespace: bd-g08
+    resourceVersion: "1791098407147263020"
+    uid: 07f84a93-4dd0-4b46-a2f0-cd572939e958
+  spec:
+    automountServiceAccountToken: false
+    containers:
+    - command:
+      - sleep
+      - infinity
+      env:
+      - name: S3_ENDPOINT
+        value: http://objects:8333
+      - name: PRINCIPAL
+        value: owner
+      envFrom:
+      - secretRef:
+          name: s3-owner
+      image: us-east5-docker.pkg.dev/bigdata-lab1-group08/bigdata-lab/bigdata-client@sha256:fb0d27dc409f30bf1272eea6a7409abe6603bbb765399c248e2bc74fbcb06ac4
+      imagePullPolicy: IfNotPresent
+      name: client
+      resources:
+        limits:
+          cpu: 500m
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-cluster-1-default-pool-a7cd3e76-5p4n
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      runAsNonRoot: false
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:07Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:03Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:07Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:07Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:03Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - allocatedResources:
+        cpu: 100m
+        memory: 128Mi
+      containerID: containerd://0d1712e67f36ebd2e8a16f7c4216e50708a6671c9ed3ccd3981b849dc9561029
+      image: sha256:57d81050c7d87c2484eb8cb67420102d8e5434fd94df925e3c9ce9ac4b1cf033
+      imageID: us-east5-docker.pkg.dev/bigdata-lab1-group08/bigdata-lab/bigdata-client@sha256:fb0d27dc409f30bf1272eea6a7409abe6603bbb765399c248e2bc74fbcb06ac4
+      lastState: {}
+      name: client
+      ready: true
+      resources:
+        limits:
+          cpu: 500m
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2026-10-04T07:20:06Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+    hostIP: 10.202.0.4
+    hostIPs:
+    - ip: 10.202.0.4
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.92.1.22
+    podIPs:
+    - ip: 10.92.1.22
+    qosClass: Burstable
+    startTime: "2026-10-04T07:20:03Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 77c8764f7aa2dad34cba41765355508e18174cd9b67fb36805e1ac5d94a7d1b9
+      cni.projectcalico.org/podIP: 10.92.1.23/32
+      cni.projectcalico.org/podIPs: 10.92.1.23/32
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"labels":{"access":"s3","role":"ingestor"},"name":"ingestor","namespace":"bd-g08"},"spec":{"automountServiceAccountToken":false,"containers":[{"command":["sleep","infinity"],"env":[{"name":"S3_ENDPOINT","value":"http://objects:8333"},{"name":"PRINCIPAL","value":"ingestor"}],"envFrom":[{"secretRef":{"name":"s3-ingestor"}}],"image":"us-east5-docker.pkg.dev/bigdata-lab1-group08/bigdata-lab/bigdata-client@sha256:fb0d27dc409f30bf1272eea6a7409abe6603bbb765399c248e2bc74fbcb06ac4","name":"client","resources":{"limits":{"cpu":"500m","memory":"512Mi"},"requests":{"cpu":"100m","memory":"128Mi"}},"securityContext":{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"seccompProfile":{"type":"RuntimeDefault"}}}],"securityContext":{"runAsNonRoot":false}}}
+    creationTimestamp: "2026-10-04T07:20:05Z"
+    generation: 1
+    labels:
+      access: s3
+      role: ingestor
+      topology.kubernetes.io/region: us-east5
+      topology.kubernetes.io/zone: us-east5-a
+    name: ingestor
+    namespace: bd-g08
+    resourceVersion: "1791098407113567016"
+    uid: 10d1825a-96b9-441e-91cd-50bc2ee96436
+  spec:
+    automountServiceAccountToken: false
+    containers:
+    - command:
+      - sleep
+      - infinity
+      env:
+      - name: S3_ENDPOINT
+        value: http://objects:8333
+      - name: PRINCIPAL
+        value: ingestor
+      envFrom:
+      - secretRef:
+          name: s3-ingestor
+      image: us-east5-docker.pkg.dev/bigdata-lab1-group08/bigdata-lab/bigdata-client@sha256:fb0d27dc409f30bf1272eea6a7409abe6603bbb765399c248e2bc74fbcb06ac4
+      imagePullPolicy: IfNotPresent
+      name: client
+      resources:
+        limits:
+          cpu: 500m
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-cluster-1-default-pool-a7cd3e76-5p4n
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      runAsNonRoot: false
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:07Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:05Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:07Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:07Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:05Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - allocatedResources:
+        cpu: 100m
+        memory: 128Mi
+      containerID: containerd://0e1afe3593f5f3480d9005b76cf35baf48a565deae7cbcef321a6820295ef774
+      image: sha256:57d81050c7d87c2484eb8cb67420102d8e5434fd94df925e3c9ce9ac4b1cf033
+      imageID: us-east5-docker.pkg.dev/bigdata-lab1-group08/bigdata-lab/bigdata-client@sha256:fb0d27dc409f30bf1272eea6a7409abe6603bbb765399c248e2bc74fbcb06ac4
+      lastState: {}
+      name: client
+      ready: true
+      resources:
+        limits:
+          cpu: 500m
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2026-10-04T07:20:06Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+    hostIP: 10.202.0.4
+    hostIPs:
+    - ip: 10.202.0.4
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.92.1.23
+    podIPs:
+    - ip: 10.92.1.23
+    qosClass: Burstable
+    startTime: "2026-10-04T07:20:05Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 50a5e02f3f0b77230d19afc17afd71b94565ee88050f1dba65d2c4d59517ee31
+      cni.projectcalico.org/podIP: 10.92.1.24/32
+      cni.projectcalico.org/podIPs: 10.92.1.24/32
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"labels":{"access":"s3","role":"analyst"},"name":"analyst","namespace":"bd-g08"},"spec":{"automountServiceAccountToken":false,"containers":[{"command":["sleep","infinity"],"env":[{"name":"S3_ENDPOINT","value":"http://objects:8333"},{"name":"PRINCIPAL","value":"analyst"}],"envFrom":[{"secretRef":{"name":"s3-analyst"}}],"image":"us-east5-docker.pkg.dev/bigdata-lab1-group08/bigdata-lab/bigdata-client@sha256:fb0d27dc409f30bf1272eea6a7409abe6603bbb765399c248e2bc74fbcb06ac4","name":"client","resources":{"limits":{"cpu":"500m","memory":"512Mi"},"requests":{"cpu":"100m","memory":"128Mi"}},"securityContext":{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"seccompProfile":{"type":"RuntimeDefault"}}}],"securityContext":{"runAsNonRoot":false}}}
+    creationTimestamp: "2026-10-04T07:20:07Z"
+    generation: 1
+    labels:
+      access: s3
+      role: analyst
+      topology.kubernetes.io/region: us-east5
+      topology.kubernetes.io/zone: us-east5-a
+    name: analyst
+    namespace: bd-g08
+    resourceVersion: "1791098408123055000"
+    uid: 7d2aca40-fee5-42be-a14a-32576ce375d9
+  spec:
+    automountServiceAccountToken: false
+    containers:
+    - command:
+      - sleep
+      - infinity
+      env:
+      - name: S3_ENDPOINT
+        value: http://objects:8333
+      - name: PRINCIPAL
+        value: analyst
+      envFrom:
+      - secretRef:
+          name: s3-analyst
+      image: us-east5-docker.pkg.dev/bigdata-lab1-group08/bigdata-lab/bigdata-client@sha256:fb0d27dc409f30bf1272eea6a7409abe6603bbb765399c248e2bc74fbcb06ac4
+      imagePullPolicy: IfNotPresent
+      name: client
+      resources:
+        limits:
+          cpu: 500m
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-cluster-1-default-pool-a7cd3e76-5p4n
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      runAsNonRoot: false
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:08Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:07Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:08Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:08Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:07Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - allocatedResources:
+        cpu: 100m
+        memory: 128Mi
+      containerID: containerd://7139e55b106938c70281c0d43f023abde43f0af4361f7e1cb68f5dc0121bbdab
+      image: sha256:57d81050c7d87c2484eb8cb67420102d8e5434fd94df925e3c9ce9ac4b1cf033
+      imageID: us-east5-docker.pkg.dev/bigdata-lab1-group08/bigdata-lab/bigdata-client@sha256:fb0d27dc409f30bf1272eea6a7409abe6603bbb765399c248e2bc74fbcb06ac4
+      lastState: {}
+      name: client
+      ready: true
+      resources:
+        limits:
+          cpu: 500m
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2026-10-04T07:20:08Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+    hostIP: 10.202.0.4
+    hostIPs:
+    - ip: 10.202.0.4
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.92.1.24
+    podIPs:
+    - ip: 10.92.1.24
+    qosClass: Burstable
+    startTime: "2026-10-04T07:20:07Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 13fab796ee510b9d6cd6eb2cd3db2dbaff27229ad1c201dcd4e3df961d2117b0
+      cni.projectcalico.org/podIP: 10.92.1.25/32
+      cni.projectcalico.org/podIPs: 10.92.1.25/32
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"labels":{"role":"blocked"},"name":"blocked","namespace":"bd-g08"},"spec":{"automountServiceAccountToken":false,"containers":[{"command":["sleep","infinity"],"env":[{"name":"S3_ENDPOINT","value":"http://objects:8333"},{"name":"PRINCIPAL","value":"blocked"}],"image":"us-east5-docker.pkg.dev/bigdata-lab1-group08/bigdata-lab/bigdata-client@sha256:fb0d27dc409f30bf1272eea6a7409abe6603bbb765399c248e2bc74fbcb06ac4","name":"client","resources":{"limits":{"cpu":"500m","memory":"512Mi"},"requests":{"cpu":"100m","memory":"128Mi"}},"securityContext":{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"seccompProfile":{"type":"RuntimeDefault"}}}],"securityContext":{"runAsNonRoot":false}}}
+    creationTimestamp: "2026-10-04T07:20:09Z"
+    generation: 1
+    labels:
+      role: blocked
+      topology.kubernetes.io/region: us-east5
+      topology.kubernetes.io/zone: us-east5-a
+    name: blocked
+    namespace: bd-g08
+    resourceVersion: "1791098410140095015"
+    uid: 53d18042-a4da-46ba-af77-2d4f11bd61cc
+  spec:
+    automountServiceAccountToken: false
+    containers:
+    - command:
+      - sleep
+      - infinity
+      env:
+      - name: S3_ENDPOINT
+        value: http://objects:8333
+      - name: PRINCIPAL
+        value: blocked
+      image: us-east5-docker.pkg.dev/bigdata-lab1-group08/bigdata-lab/bigdata-client@sha256:fb0d27dc409f30bf1272eea6a7409abe6603bbb765399c248e2bc74fbcb06ac4
+      imagePullPolicy: IfNotPresent
+      name: client
+      resources:
+        limits:
+          cpu: 500m
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-cluster-1-default-pool-a7cd3e76-5p4n
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      runAsNonRoot: false
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:10Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:09Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:10Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:10Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T07:20:09Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - allocatedResources:
+        cpu: 100m
+        memory: 128Mi
+      containerID: containerd://e043196aab496baaa6bf14b0fca181702a1cec82f1cf9876107b1ae92b801595
+      image: sha256:57d81050c7d87c2484eb8cb67420102d8e5434fd94df925e3c9ce9ac4b1cf033
+      imageID: us-east5-docker.pkg.dev/bigdata-lab1-group08/bigdata-lab/bigdata-client@sha256:fb0d27dc409f30bf1272eea6a7409abe6603bbb765399c248e2bc74fbcb06ac4
+      lastState: {}
+      name: client
+      ready: true
+      resources:
+        limits:
+          cpu: 500m
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2026-10-04T07:20:09Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+    hostIP: 10.202.0.4
+    hostIPs:
+    - ip: 10.202.0.4
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.92.1.25
+    podIPs:
+    - ip: 10.92.1.25
+    qosClass: Burstable
+    startTime: "2026-10-04T07:20:09Z"
+kind: List
+metadata:
+  resourceVersion: ""

@@ -1,0 +1,18 @@
+NAME                          READY   STATUS    RESTARTS   AGE     IP           NODE                                       NOMINATED NODE   READINESS GATES
+pod/analyst                   1/1     Running   0          7h54m   10.92.1.24   gke-cluster-1-default-pool-a7cd3e76-5p4n   <none>           <none>
+pod/blocked                   1/1     Running   0          7h53m   10.92.1.25   gke-cluster-1-default-pool-a7cd3e76-5p4n   <none>           <none>
+pod/blocked-client            1/1     Running   0          8h      10.92.1.21   gke-cluster-1-default-pool-a7cd3e76-5p4n   <none>           <none>
+pod/ingestor                  1/1     Running   0          7h54m   10.92.1.23   gke-cluster-1-default-pool-a7cd3e76-5p4n   <none>           <none>
+pod/n04-baseline              1/1     Running   0          8h      10.92.1.19   gke-cluster-1-default-pool-a7cd3e76-5p4n   <none>           <none>
+pod/objects-57c9db6ff-gzd8f   1/1     Running   0          9h      10.92.1.17   gke-cluster-1-default-pool-a7cd3e76-5p4n   <none>           <none>
+pod/owner                     1/1     Running   0          7h54m   10.92.1.22   gke-cluster-1-default-pool-a7cd3e76-5p4n   <none>           <none>
+pod/owner-client              1/1     Running   0          8h      10.92.1.20   gke-cluster-1-default-pool-a7cd3e76-5p4n   <none>           <none>
+
+NAME                                STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE
+persistentvolumeclaim/object-data   Bound    pvc-d484bd27-3aa8-4c68-8e9a-328ebf913b98   4Gi        RWO            standard-rwo   <unset>                 22h   Filesystem
+
+NAME              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE   SELECTOR
+service/objects   ClusterIP   34.118.234.120   <none>        8333/TCP   22h   app=objects
+
+NAME                                           ADDRESSTYPE   PORTS   ENDPOINTS    AGE
+endpointslice.discovery.k8s.io/objects-j4qjf   IPv4          8333    10.92.1.17   22h

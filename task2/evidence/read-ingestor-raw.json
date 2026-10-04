@@ -1,0 +1,1 @@
+{"bucket": "research-raw", "bytes": 25, "error": null, "http": 200, "key": "fixture.txt", "ms": 58.84507599694189, "ok": true, "op": "get", "principal": "ingestor", "request_id": "18DB5C77419A8C5D31171E14", "sha256": "9ce4c8bb96c85122c3b386653fbe9150cb2f4df03f25c83408fe11c29b87d6f8", "utc": "2026-10-04T15:15:44.126384+00:00"}

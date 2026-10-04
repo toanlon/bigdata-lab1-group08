@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"name":"object-data","namespace":"bd-g08"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"4Gi"}}}}
+    pv.kubernetes.io/bind-completed: "yes"
+    pv.kubernetes.io/bound-by-controller: "yes"
+    volume.beta.kubernetes.io/storage-provisioner: pd.csi.storage.gke.io
+    volume.kubernetes.io/selected-node: gke-cluster-1-default-pool-a7cd3e76-01n1
+    volume.kubernetes.io/storage-provisioner: pd.csi.storage.gke.io
+  creationTimestamp: "2026-10-03T16:39:55Z"
+  finalizers:
+  - kubernetes.io/pvc-protection
+  name: object-data
+  namespace: bd-g08
+  resourceVersion: "1791047715881247017"
+  uid: d484bd27-3aa8-4c68-8e9a-328ebf913b98
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 4Gi
+  storageClassName: standard-rwo
+  volumeMode: Filesystem
+  volumeName: pvc-d484bd27-3aa8-4c68-8e9a-328ebf913b98
+status:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 4Gi
+  phase: Bound

@@ -1,0 +1,180 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 8e1fb8460cdfb65d40dd57a6f63d13b4b65e72d74fbb6412fac278e996434e27
+      cni.projectcalico.org/podIP: 10.92.1.17/32
+      cni.projectcalico.org/podIPs: 10.92.1.17/32
+    creationTimestamp: "2026-10-04T05:58:13Z"
+    generateName: objects-57c9db6ff-
+    generation: 1
+    labels:
+      app: objects
+      pod-template-hash: 57c9db6ff
+      topology.kubernetes.io/region: us-east5
+      topology.kubernetes.io/zone: us-east5-a
+    name: objects-57c9db6ff-gzd8f
+    namespace: bd-g08
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: objects-57c9db6ff
+      uid: 7ffc77db-52fd-4504-88f0-43a16b556404
+    resourceVersion: "1791093520470751017"
+    uid: 35551777-9b24-44c2-bcda-22c205068a7b
+  spec:
+    automountServiceAccountToken: false
+    containers:
+    - args:
+      - mini
+      - -dir=/data
+      - -s3.config=/auth/s3.json
+      command:
+      - weed
+      image: chrislusf/seaweedfs:latest
+      imagePullPolicy: Always
+      name: store
+      ports:
+      - containerPort: 8333
+        name: s3
+        protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        periodSeconds: 10
+        successThreshold: 1
+        tcpSocket:
+          port: s3
+        timeoutSeconds: 1
+      resources:
+        limits:
+          cpu: "1"
+          memory: 1Gi
+        requests:
+          cpu: 500m
+          memory: 512Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /data
+        name: object-data
+      - mountPath: /auth
+        name: s3-config
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-cluster-1-default-pool-a7cd3e76-5p4n
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000
+      runAsGroup: 1000
+      runAsNonRoot: true
+      runAsUser: 1000
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: object-data
+      persistentVolumeClaim:
+        claimName: object-data
+    - name: s3-config
+      secret:
+        defaultMode: 420
+        secretName: s3-config
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T05:58:39Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T05:58:13Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T05:58:40Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T05:58:40Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T05:58:13Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - allocatedResources:
+        cpu: 500m
+        memory: 512Mi
+      containerID: containerd://9cd55a7006018ca418046e71b208afaf0fcd5a156c11caf8dd8095a11a8e7b74
+      image: docker.io/chrislusf/seaweedfs:latest
+      imageID: docker.io/chrislusf/seaweedfs@sha256:4e61d15fd35994cb1e43e1e553dff106794841fd9a99ade2fc8c8bfce4d7872d
+      lastState: {}
+      name: store
+      ready: true
+      resources:
+        limits:
+          cpu: "1"
+          memory: 1Gi
+        requests:
+          cpu: 500m
+          memory: 512Mi
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2026-10-04T05:58:38Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /data
+        name: object-data
+      - mountPath: /auth
+        name: s3-config
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 10.202.0.4
+    hostIPs:
+    - ip: 10.202.0.4
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.92.1.17
+    podIPs:
+    - ip: 10.92.1.17
+    qosClass: Burstable
+    startTime: "2026-10-04T05:58:13Z"
+kind: List
+metadata:
+  resourceVersion: ""
